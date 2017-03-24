@@ -49,7 +49,7 @@ public class Hangman {
             if (letter != character) {
                 guessed = guessed + "_";
             } else if (letter == character) {
-                guessed = guessed letter + " ";
+                guessed = guessed + letter + " ";
             }
         }
 
