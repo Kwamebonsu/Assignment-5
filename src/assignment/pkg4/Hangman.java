@@ -35,6 +35,7 @@ public class Hangman {
         System.out.println("");
         System.out.println("");
 
+        String guessed = "";
         //ask player 2 to guess a letter
         System.out.println("Player 2. Please guess a letter.");
         String guess = input.nextLine();
@@ -46,9 +47,9 @@ public class Hangman {
             char character = word.charAt(i);
 
             if (letter != character) {
-                System.out.print("_ ");
+                guessed = guessed + "_";
             } else if (letter == character) {
-                System.out.print(letter + " ");
+                guessed = guessed letter + " ";
             }
         }
 
