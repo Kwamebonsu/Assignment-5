@@ -22,7 +22,14 @@ public class Hangman {
         // Ask player 1 for a word
         System.out.println("Player 1. Please enter a word");
         String word = input.nextLine();
+        //make the entered word readable
         word = word.toLowerCase();
+        word = word.replace("3", "e");
+        word = word.replace("@", "a");
+        word = word.replace("0", "o");
+        word = word.replace("1", "l");
+        word = word.replace("7", "t");
+        word = word.replace("5", "s");
 
         //find the word length and output it to the user
         int length = word.length();
