@@ -22,6 +22,7 @@ public class Hangman {
         // Ask player 1 for a word
         System.out.println("Player 1. Please enter a word");
         String word = input.nextLine();
+        word = word.toLowerCase();
 
         //find the word length and output it to the user
         int length = word.length();
@@ -36,22 +37,31 @@ public class Hangman {
         System.out.println("");
 
         String guessed = "";
-        //ask player 2 to guess a letter
-        System.out.println("Player 2. Please guess a letter.");
-        String guess = input.nextLine();
-        //convert the letter from string to char
-        char letter = guess.charAt(0);
-
-        //seperate the word into individual letters
+        //building blank spaces
         for (int i = 0; i < length; i++) {
-            char character = word.charAt(i);
-
-            if (letter != character) {
-                guessed = guessed + "_";
-            } else if (letter == character) {
-                guessed = guessed + letter + " ";
-            }
+            guessed = guessed + "_ ";
         }
 
+        //ask player 2 to guess a letter
+
+        while (!guessed.equalsIgnoreCase(word)) {
+            System.out.println("Player 2. Please guess a letter.");
+            String guess = input.nextLine();
+            //convert the letter from string to char
+            char letter = guess.charAt(0);
+
+            //seperate the word into individual letters
+            for (int i = 0; i < length; i++) {
+                char character = word.charAt(i);
+
+                if (letter == character) {
+
+                    guessed = guessed.substring(0, i) + character + guessed.substring(i, length);
+                }
+
+            }
+            System.out.println(guessed);
+
+        }
     }
 }
