@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author bonsk5852
  */
-public class Hangman {
+public class Hangman2 {
 
     /**
      * @param args the command line arguments
@@ -144,7 +144,7 @@ public class Hangman {
 
         //output the word as underscores
         for (int counter = 0; counter < length; counter++) {
-            System.out.print("_ ");
+            System.out.print("_");
         }
 
         System.out.println("");
@@ -153,7 +153,7 @@ public class Hangman {
         String guessed = "";
         //building blank spaces
         for (int i = 0; i < length; i++) {
-            guessed = guessed + "_ ";
+            guessed = guessed + "_";
         }
 
         //ask player 2 to guess a letter
@@ -171,12 +171,15 @@ public class Hangman {
                 if (letter == character && i == 0) {
                     guessed = letter + guessed.substring(i + 1);
                 } else if (letter == character && i != 0) {
-                    guessed = guessed.substring(0, 2 * i) + letter + " " + guessed.substring(2 * (i + 1), 2 * length);
+                    guessed = guessed.substring(0, i) + letter + guessed.substring(i + 1, length);
                 }
 
             }
             System.out.println(guessed);
-
+            if (guessed.equalsIgnoreCase(word)) {
+                System.out.println("You won!");
+                break;
+            }
         }
     }
 }
