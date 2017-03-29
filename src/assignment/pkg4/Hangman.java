@@ -268,7 +268,6 @@ public class Hangman {
 
             while (!guessed.equalsIgnoreCase(word)) {
                 System.out.println("Player 2. Please guess a letter.");
-                System.out.println("");
                 System.out.println("Or type Yes if you want to guess the word");
                 System.out.println("");
                 String guess = input.nextLine();
@@ -293,6 +292,14 @@ public class Hangman {
                     System.out.println("");
                     System.out.println(guessed);
                     System.out.println("");
+                    //if all the letters are guessed, tell the user they won then break the circuit
+                    if (guessed.equalsIgnoreCase(space)) {
+                        System.out.println("You won!!");
+                        System.out.println("");
+                        System.out.println("The word is " + word + "!");
+                        System.out.println("");
+                        break;
+                    }
                 } else if (guess.equalsIgnoreCase("yes")) {
                     //ask the user if they want to guess the word
                     System.out.println("");
@@ -325,14 +332,7 @@ public class Hangman {
                         System.out.println("Okay");
                         System.out.println("");
                     }
-                    //if all the letters are guessed, tell the user they won then break the circuit
-                    if (guessed.equalsIgnoreCase(space)) {
-                        System.out.println("You won!!");
-                        System.out.println("");
-                        System.out.println("The word is " + word + "!");
-                        System.out.println("");
-                        break;
-                    }
+
                 }
             }
         }
