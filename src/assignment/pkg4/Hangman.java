@@ -266,7 +266,7 @@ public class Hangman {
 
             //ask player 2 to guess a letter
 
-            while (!guessed.equalsIgnoreCase(word)) {
+            for (int lives = 20; lives < 0; lives--) {
                 System.out.println("Player 2. Please guess a letter.");
                 System.out.println("Or type Yes if you want to guess the word");
                 System.out.println("");
@@ -334,7 +334,10 @@ public class Hangman {
                     }
 
                 }
+                System.out.println("You have " + lives + " lives left!");
             }
+            System.out.println("You ran out of lives!");
+            System.out.println("Game over");
         }
     }
 }
