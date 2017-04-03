@@ -263,7 +263,7 @@ public class Hangman {
         //ask player 2 to guess a letter
 
         while (true) {
-            for (int lives = 20; lives > 0; lives--) {
+            for (int lives = length*4; lives > 0; lives--) {
                 System.out.println("Player 2. Please guess a letter.");
                 System.out.println("Or type Yes if you want to guess the word");
                 System.out.println("");
