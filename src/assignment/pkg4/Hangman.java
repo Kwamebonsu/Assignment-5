@@ -334,9 +334,21 @@ public class Hangman {
                 }
                 System.out.println("You have " + (lives - 1) + " lives left!");
                 if (lives < 2) {
-                    System.out.println("Game Over!");
-                    System.out.println("You ran out of lives!");
-                    break;
+                    System.out.println("You have one chance to guess the word");
+                    System.out.println("");
+                    String finalguess = input.nextLine();
+
+                    if (finalguess.equalsIgnoreCase(word)) {
+                        System.out.println("Wow you got lucky!");
+                        System.out.println("You won!");
+                        break;
+                    } else if (!finalguess.equalsIgnoreCase(word)) {
+                        System.out.println("Sorry that's not the word.");
+                        System.out.println("Game Over!");
+                        System.out.println("You ran out of lives!");
+                        System.out.println("The word was " + word);
+                        break;
+                    }
                 }
             }
             //break the loop once player 2 runs out of lives
