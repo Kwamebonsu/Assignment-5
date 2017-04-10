@@ -129,7 +129,6 @@ public class Hangman2 {
         System.out.println("");
         System.out.println("");
         System.out.println("");
-        System.out.println("");
 
         //find the word length and output it to the user
         int length = word.length();
