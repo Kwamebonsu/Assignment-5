@@ -307,7 +307,7 @@ public class Hangman {
                     //if the user says yes, allow them to input a word
                     if (guessword.equalsIgnoreCase("yes")) {
                         System.out.println("");
-                        System.out.println("Please guess a word!");
+                        System.out.println("Please guess the word!");
                         System.out.println("");
                         String wholeword = input.nextLine();
                         System.out.println("");
